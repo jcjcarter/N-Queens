@@ -1,0 +1,42 @@
+1.1 Phasers and Atomic Integers
+
+finish(() -> {
+
+            final HjPhaser ph1 = newPhaser(SIG_WAIT);
+            final HjPhaser ph2 = newPhaser(SIG_WAIT);
+	    final HjPhaser ph3 = newPhaser(SIG_WAIT);
+            final List<HjPhaserPair> phList1 = Arrays.asList(
+                    ph1.inMode(SIG),
+                    ph2.inMode(WAIT));
+            final List<HjPhaserPair> phList2 = Arrays.asList(
+                    ph2.inMode(SIG),
+                    ph1.inMode(WAIT),
+                    ph3.inMode(WAIT));
+            final List<HjPhaserPair> phList3 = Arrays.asList(
+                    ph3.inMode(SIG),
+                    ph2.inMode(WAIT));
+
+
+asyncPhased(phList1.inMode(SIG), -------------, ()-> {
+			   A(); next;B(); next; C(); next; D();
+});
+
+asyncPhased(phList1.inMode(WAIT),phList3.inMode(WAIT)--------------, ()->{
+			   E(); next; F(); next; G(); next; H();
+});
+
+asyncPhased(phList2.inMode(WAIT), phList3.inMode(SIG), --------------, ()->{
+			    I(); next; J(); next; K(); next; L();
+});
+});
+
+2. Possible values are 9, 10, and 11.
+
+1.2 HJ isolated construct
+
+1. Yes, the semantics are the same. The isolated construct ensures that there are not
+   multiple accesses to the variable seed at one time. Two tasks executing isolated constructs must perform them in mutual execlusion.
+   For atomic variables, the same constructs are carried out where they need to be accessed in mutual execlusion.
+
+2. The while loop is needed to ensure that no thread returns the same random value. Without
+   it, threads can return the same integer value.

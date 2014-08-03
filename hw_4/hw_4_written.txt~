@@ -1,0 +1,46 @@
+1.1 Phasers and Atomic Integers
+
+finish(() -> {
+
+            final HjPhaser ph1 = newPhaser(SIG_WAIT);
+            final HjPhaser ph2 = newPhaser(SIG_WAIT);
+	    final HjPhaser ph3 = newPhaser(SIG_WAIT);
+            final List<HjPhaserPair> phList1 = Arrays.asList(
+                    ph1.inMode(SIG),
+                    ph2.inMode(WAIT));
+            final List<HjPhaserPair> phList2 = Arrays.asList(
+                    ph2.inMode(SIG),
+                    ph1.inMode(WAIT),
+                    ph3.inMode(WAIT));
+            final List<HjPhaserPair> phList3 = Arrays.asList(
+                    ph3.inMode(SIG),
+                    ph2.inMode(WAIT));
+
+
+asyncPhased(phList1, -------------, ()-> {
+			   A(); next;B(); next; C(); next; D();
+});
+
+asyncPhased(phList2,--------------, ()->{
+			   E(); next; F(); next; G(); next; H();
+});
+
+asyncPhased(phList3, --------------, ()->{
+			    I(); next; J(); next; K(); next; L();
+});
+});
+
+2. Possible values are 10, 11, and 12.
+
+1.2 HJ isolated construct
+
+1. Yes, the semantics are the same. The isolated construct ensures that there are not
+   any multiple accesses to the variable seed at one time. The threads are in a queue.
+
+2. The while loop is needed to ensure that another value is available and that it does
+   generate an error if no values are left to be access. If the while loop was removed 
+   then there are cases where an error will occur when the get method on the seed has no
+   more variables to access from the data structure.
+
+2. The while loop is needed to ensure that no thread returns the same random value. Without
+   it, threads can return the same integer value.

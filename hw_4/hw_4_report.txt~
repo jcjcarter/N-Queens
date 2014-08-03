@@ -1,0 +1,158 @@
+Part 1:
+
+1 Worker:
+NQueens
+Time = 1.86 sec
+Sequential: Number of solutions is:14200
+
+Time = 1.15 sec
+Parallel: Number of solutions is:14200
+
+	   20.86 sequential Sudoku
+	   19.26 parallel Sudoku
+
+2 Workers:
+NQueens
+Time = 1.87 sec
+Sequential: Number of solutions is:14200
+
+Time = 1.15 sec
+Parallel: Number of solutions is:14200
+
+	  20.72 sec sequential Sudoku
+	  18.96 sec parallel Sudoku
+
+4 Workers:
+NQueens
+Time = 1.87 sec
+Sequential: Number of solutions is:14200
+
+Time = 1.14 sec
+Parallel: Number of solutions is:14200
+
+	   20.86 sec Sudoku sequential
+	   19.58 sec parallel Sudoku
+
+8 Workers:
+NQUEENS:
+Time = 1.85 sec
+Sequential: Number of solutions is:14200
+
+Time = 1.13 sec
+Parallel: Number of solutions is:14200
+
+	   20.75 sec sequential Sudoku
+	   19 sec parallel Sudoku
+Part 2:
+
+1 Worker:
+
+Time = 0.78 sec
+Sequential Sudoku: Best solution is
+* State:
+ 1 6 8 3 2 5 4 7 9
+ 5 3 4 9 7 6 1 2 8
+ 2 7 9 1 4 8 6 5 3
+ 7 8 3 5 6 2 9 1 4
+ 9 4 5 7 1 3 2 8 6
+ 6 2 1 8 9 4 7 3 5
+ 4 5 6 2 8 7 3 9 1
+ 8 1 7 6 3 9 5 4 2
+ 3 9 2 4 5 1 8 6 7
+
+Time = 0.39 sec
+Parallel Sudoku: Best solution is
+* State:
+ 1 6 8 3 2 5 4 7 9
+ 5 3 4 9 7 6 1 2 8
+ 2 7 9 1 4 8 6 5 3
+ 7 8 3 5 6 2 9 1 4
+ 9 4 5 7 1 3 2 8 6
+ 6 2 1 8 9 4 7 3 5
+ 4 5 6 2 8 7 3 9 1
+ 8 1 7 6 3 9 5 4 2
+ 3 9 2 4 5 1 8 6 7
+
+2 Workers:
+
+Time = 0.77 sec
+Sequential Sudoku: Best solution is
+* State:
+ 1 6 8 3 2 5 4 7 9
+ 5 3 4 9 7 6 1 2 8
+ 2 7 9 1 4 8 6 5 3
+ 7 8 3 5 6 2 9 1 4
+ 9 4 5 7 1 3 2 8 6
+ 6 2 1 8 9 4 7 3 5
+ 4 5 6 2 8 7 3 9 1
+ 8 1 7 6 3 9 5 4 2
+ 3 9 2 4 5 1 8 6 7
+
+Time = 0.4 sec
+Parallel Sudoku: Best solution is
+* State:
+ 1 6 8 3 2 5 4 7 9
+ 5 3 4 9 7 6 1 2 8
+ 2 7 9 1 4 8 6 5 3
+ 7 8 3 5 6 2 9 1 4
+ 9 4 5 7 1 3 2 8 6
+ 6 2 1 8 9 4 7 3 5
+ 4 5 6 2 8 7 3 9 1
+ 8 1 7 6 3 9 5 4 2
+ 3 9 2 4 5 1 8 6 7
+
+4 Workers:
+
+Time = 0.76 sec
+Sequential Sudoku: Best solution is
+* State:
+ 1 6 8 3 2 5 4 7 9
+ 5 3 4 9 7 6 1 2 8
+ 2 7 9 1 4 8 6 5 3
+ 7 8 3 5 6 2 9 1 4
+ 9 4 5 7 1 3 2 8 6
+ 6 2 1 8 9 4 7 3 5
+ 4 5 6 2 8 7 3 9 1
+ 8 1 7 6 3 9 5 4 2
+ 3 9 2 4 5 1 8 6 7
+
+Time = 0.39 sec
+Parallel Sudoku: Best solution is
+* State:
+ 1 6 8 3 2 5 4 7 9
+ 5 3 4 9 7 6 1 2 8
+ 2 7 9 1 4 8 6 5 3
+ 7 8 3 5 6 2 9 1 4
+ 9 4 5 7 1 3 2 8 6
+ 6 2 1 8 9 4 7 3 5
+ 4 5 6 2 8 7 3 9 1
+ 8 1 7 6 3 9 5 4 2
+ 3 9 2 4 5 1 8 6 7
+
+8 Workers:
+
+Time = 0.77 sec
+Sequential Sudoku: Best solution is
+* State:
+ 1 6 8 3 2 5 4 7 9
+ 5 3 4 9 7 6 1 2 8
+ 2 7 9 1 4 8 6 5 3
+ 7 8 3 5 6 2 9 1 4
+ 9 4 5 7 1 3 2 8 6
+ 6 2 1 8 9 4 7 3 5
+ 4 5 6 2 8 7 3 9 1
+ 8 1 7 6 3 9 5 4 2
+ 3 9 2 4 5 1 8 6 7
+
+Time = 0.39 sec
+Parallel Sudoku: Best solution is
+* State:
+ 1 6 8 3 2 5 4 7 9
+ 5 3 4 9 7 6 1 2 8
+ 2 7 9 1 4 8 6 5 3
+ 7 8 3 5 6 2 9 1 4
+ 9 4 5 7 1 3 2 8 6
+ 6 2 1 8 9 4 7 3 5
+ 4 5 6 2 8 7 3 9 1
+ 8 1 7 6 3 9 5 4 2
+ 3 9 2 4 5 1 8 6 7
